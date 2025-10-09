@@ -111,7 +111,7 @@ print("\n")
 # • Agregar un nuevo producto si no existe.
 
 print("Ejercicio 8: \n")
-inventario = {"Mouse": 7, "Teclado": 9, "Monitor": 2, "Joystick": 18, "Auriculares": 24}
+inventario = {"mouse": 7, "teclado": 9, "monitor": 2, "joystick": 18, "auriculares": 24}
 bucle = True
 while bucle == True:
     print("======= Menú principal ======= \n")
@@ -152,3 +152,26 @@ while bucle == True:
         case 4:
             print("Hasta pronto! ")
             bucle = False
+print("\n")
+
+#9) Creá una agenda donde las claves sean tuplas de (día, hora) y los valores sean eventos.
+#Permití consultar qué actividad hay en cierto día y hora.
+
+print("Ejercicio 9: \n")
+agenda = { 
+    ("lunes" , "18:00") : "Estudio" ,
+    ("martes" , "20:00") : "Boxeo" , 
+    ("miercoles" , "19:00") : "Fútbol" , 
+    ("jueves" , "20:30") : "Piano" ,
+    ("viernes" , "21:00") : "Cita"
+    }
+
+consulta = input("Ingrese el dia y horario que desea consultar: ")
+consulta = consulta.split()
+consulta = tuple(consulta)
+if consulta in agenda:
+    print(f"El {consulta} está ocupador por ---> {agenda[consulta]}")
+else: 
+    print(f"El {consulta} está libre. ")
+print("\n")
+
