@@ -38,7 +38,7 @@ print(f"Ejercicio 3: {frutas} \n")
 
 print("Ejercicio 4: \n")
 agenda = {}
-for i in range(1):
+for i in range(5):
     nombre = input("Ingrese el nombre del contacto: ")
     numero = input("Ahora ingrese el número de teléfono: ")
     print("\n")
@@ -82,4 +82,73 @@ for i in range(3):
         notas.append(nota)
     tupla_notas = tuple(notas)
     datos_alumnos[alumno] = tupla_notas
-print(f"Registro completo: {datos_alumnos}")
+for nombre, notas in datos_alumnos.items():
+    promedio = sum(notas) / 3
+    print(f"El promedio de {nombre} es de: {promedio}")
+print("\n")
+
+# 7) Dado dos sets de números, representando dos listas de estudiantes que aprobaron Parcial 1
+# y Parcial 2:
+# • Mostrá los que aprobaron ambos parciales.
+# • Mostrá los que aprobaron solo uno de los dos.
+# • Mostrá la lista total de estudiantes que aprobaron al menos un parcial (sin repetir).
+
+print("Ejercicio 7: \n")
+parcial1 = {7,12,24,31,47,52,66,79,88,95}
+parcial2 = {7,15,22,31,44,52,66,71,84,95}
+ambos = parcial1 & parcial2 
+print(f"Alumnos que aprobaron ambos parciales: {ambos}")
+solo_uno = parcial1 ^ parcial2 
+print(f"Alumnos que aprobaron solo uno de los parciales: {solo_uno}")
+al_menos_uno = parcial1 | parcial2
+print(f"Aprobaron al menos un parcial: {al_menos_uno}")
+print("\n")
+
+# 8) Armá un diccionario donde las claves sean nombres de productos y los valores su stock.
+# Permití al usuario:
+# • Consultar el stock de un producto ingresado.
+# • Agregar unidades al stock si el producto ya existe.
+# • Agregar un nuevo producto si no existe.
+
+print("Ejercicio 8: \n")
+inventario = {"Mouse": 7, "Teclado": 9, "Monitor": 2, "Joystick": 18, "Auriculares": 24}
+bucle = True
+while bucle == True:
+    print("======= Menú principal ======= \n")
+    print("1) Consultar stock. ")
+    print("2) Agregar stock. ")
+    print("3) Agregar un nuevo producto. ")
+    print("4) Salir. \n")
+    opcion = int(input("Ingrese una de las opciones ---> "))
+
+    match opcion: 
+        case 1:
+            buscar = input("Ingrese el producto que desea consultar: ")
+            if buscar in inventario:
+                print(f"Stock de {buscar}: {inventario[buscar]}")
+            else:
+                print("Producto inexistente. ")
+            input("\nPresione Enter para volver al menú. ")
+        
+        case 2: 
+            buscar = input("Ingrese el producto al que desea agregar stock: ")
+            if buscar in inventario:
+                stock = int(input("Ingrese la cantidad de stock a sumar: "))
+                inventario[buscar] += stock
+                print(f"Stock actual de {buscar}: {inventario[buscar]}")
+            else:
+                print("Producto inexistente. ")
+            input("\nPresione Enter para volver al menú. ") 
+
+        case 3:
+            buscar = input("Ingrese el nuevo producto: ")
+            if buscar in inventario:
+                print("Producto ya existente. ")   
+            else:
+                inventario[buscar] = 0
+                print(f"Producto {buscar} agregado correctamente! ")
+            input("\nPresione Enter para volver al menú. ")
+        
+        case 4:
+            print("Hasta pronto! ")
+            bucle = False
