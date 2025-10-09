@@ -175,3 +175,21 @@ else:
     print(f"El {consulta} está libre. ")
 print("\n")
 
+# 10) Dado un diccionario que mapea nombres de países con sus capitales, construí un nuevo
+# diccionario donde:
+# • Las capitales sean las claves.
+# • Los países sean los valores.
+
+print("Ejercicio 10: \n")
+paises_capitales = {
+    "Argentina": "Buenos Aires",
+    "Brasil": "Brasilia",
+    "Chile": "Santiago",
+    "Uruguay": "Montevideo",
+    "Perú": "Lima"
+}
+capitales_paises = {}
+for pais, capital in paises_capitales.items():
+    capitales_paises[capital] = pais
+print(f"Diccionario original: {paises_capitales}")
+print(f"Diccionario invertido: {capitales_paises}")
