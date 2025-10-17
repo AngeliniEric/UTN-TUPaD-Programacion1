@@ -23,8 +23,8 @@ with open("productos.txt","r") as archivo:
 
 with open("productos.txt","a") as archivo:
     nombre = input("Ingrese el nombre del nuevo producto: ")
-    precio = input("Ingrese el valor de {nombre}: $")
-    cantidad = input("Ingrese la cantidad de {nombre}: ")
+    precio = input(f"Ingrese el valor de {nombre}: $")
+    cantidad = input(f"Ingrese la cantidad de {nombre}: ")
     archivo.write(f"{nombre},{precio},{cantidad}\n")
 
 # 4. Cargar productos en una lista de diccionarios: Al leer el archivo, cargar los datos en
@@ -43,17 +43,21 @@ with open("productos.txt","r") as archivo:
 # producto. Recorrer la lista de productos y, si lo encuentra, mostrar todos sus datos. Si
 # no existe, mostrar un mensaje de error.
 
+encontrado = False
 nombre = input("Ingrese el nombre del producto que desea buscar: ")
 for producto in productos:
     if nombre == producto["nombre"]:
-        print(f"Producto: {nombre} | Precio: ${productos["precio"]} | Cantidad: {productos["cantidad"]}")
-    else:
-        print("Producto no encontrado. ")
+        print(f"Producto: {nombre} | Precio: ${producto["precio"]} | Cantidad: {producto["cantidad"]}")
+        encontrado = True
+if encontrado == False:
+    print("Producto no encontrado. ")
 
 # 6. Guardar los productos actualizados: Después de haber leído, buscado o agregado
 # productos, sobrescribir el archivo productos.txt escribiendo nuevamente todos los
 # productos actualizados desde la lista.
 
+print("\nLista actualizada:\n")
 with open("productos.txt","w") as archivo:
     for linea in productos:
         archivo.write(f"{linea["nombre"]},{linea["precio"]},{linea["cantidad"]}\n")
+        print(f"{linea["nombre"]},{linea["precio"]},{linea["cantidad"]}")

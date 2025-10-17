@@ -1,0 +1,4 @@
+Teclado,20000,7
+Mouse,12000,10
+Joystick,30000,3
+monitor,200000,1
