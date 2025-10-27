@@ -12,7 +12,7 @@ Tecnicatura Universitaria en Programación
     
 📂 Descripción del Repositorio
 
-Este repositorio almacena todas los trabajos prácticos realizados durante la cursada de Programación 1.
+Este repositorio almacena todos los trabajos prácticos realizados durante la cursada de Programación 1.
 
 📌 Estructura del repositorio:
 
