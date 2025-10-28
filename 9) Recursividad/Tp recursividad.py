@@ -114,9 +114,11 @@ def suma_digitos(n):
     else:
         ultimo = n % 10
         actual = n // 10
-        
+        acumulador = ultimo + suma_digitos(actual)
+        return acumulador
 
-
+num = int(input("Ingrese un número: "))
+print(f"La suma de dígitos de {num}: {suma_digitos(num)}")
 
 input("\nPresione Enter para continuar. ")
 
@@ -131,6 +133,8 @@ input("\nPresione Enter para continuar. ")
 # contar_bloques(2) → 3 (2 + 1)
 # contar_bloques(4) → 10 (4 + 3 + 2 + 1)
 print("\n---------- Ejercicio 7 ----------\n")
+
+
 
 input("\nPresione Enter para continuar. ")
 # 8) Escribí una función recursiva llamada contar_digito(numero, digito) que reciba un
